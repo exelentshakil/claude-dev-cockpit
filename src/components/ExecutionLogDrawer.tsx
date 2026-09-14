@@ -64,28 +64,28 @@ export function ExecutionLogDrawer() {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-30 bg-[#08090a] border-t border-[#1e2433] text-zinc-300 shadow-xl">
+    <div className="fixed bottom-0 left-0 right-0 z-30 bg-[var(--color-panel)] border-t border-[var(--color-border)] text-[var(--color-text-primary)] shadow-2xl transition-colors">
       {/* Drawer Toggle Bar */}
       <div
         onClick={() => setIsOpen(!isOpen)}
-        className="px-4 py-2 flex items-center justify-between cursor-pointer hover:bg-[#0f1115] transition-colors"
+        className="px-4 py-2 flex items-center justify-between cursor-pointer hover:bg-[var(--color-panel-subtle)] transition-colors"
       >
         <div className="flex items-center gap-2">
           <Terminal className="w-3.5 h-3.5 text-[var(--color-brand-primary)]" />
-          <span className="text-xs font-mono font-bold text-white">
+          <span className="text-xs font-mono font-bold text-[var(--color-text-primary)]">
             Live Telemetry & Execution Event Stream
           </span>
-          <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 whitespace-nowrap shrink-0">
+          <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 whitespace-nowrap shrink-0">
             <Activity className="w-2.5 h-2.5 animate-pulse" />
             Active
           </span>
         </div>
 
         <div className="flex items-center gap-3">
-          <span className="text-xs font-mono text-zinc-400 hidden sm:inline">
+          <span className="text-xs font-mono text-[var(--color-text-muted)] hidden sm:inline">
             5 Events Logged • 0 Errors • 91.4% Cache Efficiency
           </span>
-          <button className="p-1 text-zinc-400 hover:text-white">
+          <button className="p-1 text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] cursor-pointer">
             {isOpen ? <ChevronDown className="w-4 h-4" /> : <ChevronUp className="w-4 h-4" />}
           </button>
         </div>
@@ -93,40 +93,42 @@ export function ExecutionLogDrawer() {
 
       {/* Drawer Content */}
       {isOpen && (
-        <div className="p-4 border-t border-[#1e2433] max-h-64 overflow-y-auto font-mono text-xs space-y-2 bg-[#0b0d13]">
-          <div className="flex justify-between items-center pb-2 border-b border-[#1e2433]">
-            <span className="text-zinc-400">cURL Verification Probe:</span>
+        <div className="p-4 border-t border-[var(--color-border)] max-h-64 overflow-y-auto font-mono text-xs space-y-3 bg-[var(--color-panel-subtle)]">
+          <div className="flex justify-between items-center pb-2 border-b border-[var(--color-border-subtle)]">
+            <span className="text-[var(--color-text-secondary)] font-semibold">cURL Verification Probe:</span>
             <button
               onClick={handleCopyCurl}
-              className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#161922] hover:bg-[#1e2433] text-xs text-zinc-300 hover:text-white"
+              className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[var(--color-panel)] hover:bg-[var(--color-border)] border border-[var(--color-border)] text-xs text-[var(--color-text-primary)] transition-colors cursor-pointer"
             >
-              {copied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
+              {copied ? <Check className="w-3 h-3 text-emerald-500" /> : <Copy className="w-3 h-3" />}
               <span>{copied ? "Copied cURL" : "Copy cURL"}</span>
             </button>
           </div>
 
-          <pre className="p-2 bg-[#07080b] rounded border border-[#1a1d26] text-zinc-400 text-xs overflow-x-auto">
+          <pre className="p-2.5 bg-[#0b0d13] rounded-lg border border-[#1e2433] text-zinc-300 text-xs overflow-x-auto shadow-inner leading-relaxed">
             <code>{curlSnippet}</code>
           </pre>
 
-          <div className="pt-2">
-            <span className="text-zinc-400 block mb-1">Structured Telemetry Stream:</span>
-            <div className="space-y-1">
+          <div className="pt-1">
+            <span className="text-[var(--color-text-secondary)] font-semibold block mb-1.5">
+              Structured Telemetry Stream:
+            </span>
+            <div className="space-y-1 bg-[var(--color-panel)] border border-[var(--color-border)] rounded-lg p-2.5">
               {sampleLogs.map((log, idx) => (
-                <div key={idx} className="flex items-start gap-2 py-0.5">
-                  <span className="text-zinc-500 shrink-0">[{log.timestamp}]</span>
+                <div key={idx} className="flex items-start gap-2 py-0.5 text-xs">
+                  <span className="text-[var(--color-text-muted)] shrink-0 font-mono">[{log.timestamp}]</span>
                   <span
                     className={`px-1.5 py-0.2 rounded text-[12px] font-bold shrink-0 ${
                       log.level === "CACHE"
-                        ? "bg-violet-500/20 text-violet-300"
+                        ? "bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-500/20"
                         : log.level === "VERIFIED"
-                        ? "bg-emerald-500/20 text-emerald-300"
-                        : "bg-blue-500/20 text-blue-300"
+                        ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20"
+                        : "bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20"
                     }`}
                   >
                     {log.event}
                   </span>
-                  <span className="text-zinc-300 truncate">{log.detail}</span>
+                  <span className="text-[var(--color-text-secondary)] truncate font-mono">{log.detail}</span>
                 </div>
               ))}
             </div>

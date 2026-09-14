@@ -14,6 +14,7 @@ import {
   CheckCircle2,
   Sparkles,
 } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 
 interface HeaderProps {
   activeTab: string;
@@ -62,18 +63,20 @@ export function Header({ activeTab, setActiveTab, onOpenTestLab }: HeaderProps) 
               <span className="text-[var(--color-brand-primary)]">SLA:</span> 7 Calendar Days
             </div>
             <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-mono font-semibold bg-[var(--color-panel-subtle)] border border-[var(--color-border)] text-[var(--color-text-secondary)] whitespace-nowrap shrink-0">
-              <span className="text-emerald-500">Readiness:</span> 96.4%
+              <span className="text-emerald-600 dark:text-emerald-400">Readiness:</span> 96.4%
             </div>
             <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-mono font-semibold bg-[var(--color-panel-subtle)] border border-[var(--color-border)] text-[var(--color-text-secondary)] whitespace-nowrap shrink-0">
-              <span className="text-violet-500">Budget:</span> $700.00 Fixed
+              <span className="text-violet-600 dark:text-violet-400">Budget:</span> $700.00 Fixed
             </div>
             <button
               onClick={onOpenTestLab}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-hover)] text-white transition-colors whitespace-nowrap shrink-0 shadow-sm"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-hover)] text-white transition-colors whitespace-nowrap shrink-0 shadow-sm cursor-pointer"
             >
               <Sparkles className="w-3.5 h-3.5" />
               Test Live AI Lab
             </button>
+            {/* Prominent Theme Toggle */}
+            <ThemeToggle />
           </div>
         </div>
 
@@ -86,9 +89,9 @@ export function Header({ activeTab, setActiveTab, onOpenTestLab }: HeaderProps) 
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-semibold whitespace-nowrap shrink-0 transition-all ${
+                className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-semibold whitespace-nowrap shrink-0 transition-all cursor-pointer ${
                   isActive
-                    ? "bg-[var(--color-brand-subtle)] text-[var(--color-brand-primary)] border border-[var(--color-brand-primary)]/30"
+                    ? "bg-[var(--color-brand-subtle)] text-[var(--color-brand-primary)] border border-[var(--color-brand-primary)]/30 font-bold"
                     : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-panel-subtle)] border border-transparent"
                 }`}
               >
