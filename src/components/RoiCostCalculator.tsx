@@ -26,7 +26,10 @@ export function RoiCostCalculator() {
   const annualLaborSavings = monthlyLaborSavings * 12;
 
   const totalAnnualSavings = annualApiSavings + annualLaborSavings;
-  const netRoiRatio = Math.round((totalAnnualSavings / 700) * 100);
+  const annualStandardSpend = standardMonthlyCost * 12;
+  const costReductionPercentage = annualStandardSpend > 0
+    ? Math.round((annualApiSavings / annualStandardSpend) * 100)
+    : 90;
 
   return (
     <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-panel)] p-5 shadow-sm">
@@ -186,8 +189,8 @@ export function RoiCostCalculator() {
           </div>
 
           <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-3 flex items-center justify-between font-mono text-xs">
-            <span className="text-[var(--color-text-secondary)]">7-Day Engagement Net ROI:</span>
-            <span className="text-emerald-500 font-bold text-sm">+{netRoiRatio.toLocaleString()}% ROI</span>
+            <span className="text-[var(--color-text-secondary)]">API Infrastructure Cost Reduction:</span>
+            <span className="text-emerald-500 font-bold text-sm">-{costReductionPercentage}% Lower Spend</span>
           </div>
         </div>
       </div>

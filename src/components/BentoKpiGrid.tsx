@@ -46,14 +46,14 @@ export function BentoKpiGrid() {
       badge: "SSE Streaming",
     },
     {
-      title: "7-Day Execution Pace",
+      title: "Accelerated Delivery",
       value: "19.5 Hrs",
-      subtitle: "Day 6 Exam • Day 7 Questionnaire",
-      trend: "On Schedule",
+      subtitle: "Day 6 Certification • Day 7 Audit",
+      trend: "Syllabus Verified",
       trendPositive: true,
       icon: Clock,
       color: "var(--color-brand-primary)",
-      badge: "Fixed $700 Milestone",
+      badge: "Enterprise Standard",
     },
   ];
 

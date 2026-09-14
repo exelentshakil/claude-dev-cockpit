@@ -16,7 +16,7 @@ export async function GET() {
       role: "AI Automation & Integration Specialist / Systems Architect",
       examTarget: "Claude Developer Certification",
       turnaroundTarget: "7 Calendar Days",
-      budgetApproved: "$700.00 Fixed ($350 Upfront / $350 Completion)"
+      architectureTrack: "Enterprise Production Readiness & Prompt Caching Mastery"
     },
     aiProviders: {
       openai: {
@@ -37,7 +37,7 @@ export async function GET() {
     },
     database: {
       supabase: hasSupabase,
-      storage: "Relational Syllabus & Questionnaire Response Vault"
+      storage: "Relational Syllabus & Evaluation Response Vault"
     }
   });
 }

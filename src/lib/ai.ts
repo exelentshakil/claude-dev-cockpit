@@ -213,7 +213,7 @@ export async function runClaudeLabInference(
 - **Architecture**: Anthropic Messages API v1 with SSE streaming.
 - **Model Choice**: Claude Sonnet 5 for high-efficiency code generation and agentic tool dispatch.
 - **Prompt Engineering**: Structured XML tags (\`<context>\`, \`<instructions>\`, \`<thinking>\`) preventing prompt injection and enforcing deterministic output boundaries.
-- **Status**: Ready for proctored examination and post-certification questionnaire dispatch.`;
+- **Status**: Ready for proctored examination and technical architecture evaluation.`;
   }
 
   return {

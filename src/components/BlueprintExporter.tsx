@@ -9,13 +9,13 @@ export function BlueprintExporter() {
   const blueprints = [
     {
       id: "study-plan",
-      title: "7-Day Study Plan & Milestone Checklist",
+      title: "7-Day Study Plan & Architecture Checklist",
       filename: "CLAUDE_DEV_CERT_STUDY_PLAN.md",
       icon: FileText,
       description: "Complete 19.5-hour syllabus breakdown across 7 days with daily deliverables and acceptance gates.",
       content: `# Claude Developer Certification — 7-Day Study & Execution Plan
 **Candidate:** Shakil Ahmed (BarakahSoft LLC)
-**Target Milestone:** 7 Calendar Days ($700 Fixed: $350 Upfront / $350 Completion)
+**Execution Cadence:** 7 Calendar Days (Accelerated Engineering Track)
 
 ## Day 1: Study Account Provisioning & Messages API Foundation (2.5 hrs)
 - Review official certification blueprint and exam weightings.
@@ -46,10 +46,10 @@ export function BlueprintExporter() {
 - Take official Claude Developer Certification assessment under verified name.
 - Submit official passing score confirmation and secure credential badge.
 
-## Day 7: Comprehensive Questionnaire & Project Sign-Off (2.0 hrs)
-- Complete post-certification evaluation questionnaire.
-- Deliver actionable developer experience feedback to client.
-- Finalize project milestone sign-off.
+## Day 7: Comprehensive Technical Evaluation & Architecture Sign-Off (2.0 hrs)
+- Complete comprehensive technical architecture and developer experience evaluation.
+- Deliver actionable findings on prompt caching, API ergonomics, and CLI tooling.
+- Finalize production system validation package.
 `
     },
     {

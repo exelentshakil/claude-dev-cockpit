@@ -4,7 +4,7 @@
 **Document Ref:** `BS-2026-CLAUDE-CERT-001`  
 **Author:** Shakil Ahmed, Founder & Principal Systems Architect · BarakahSoft LLC  
 **Date:** September 15, 2026  
-**Target Milestone:** 7-Day Completion Window ($700 Fixed: $350 Upfront / $350 Final)  
+**Target Cadence:** 7-Day Accelerated Architecture Track (Turnkey Enterprise Delivery)  
 **Live URL:** https://claude-dev-cockpit.vercel.app  
 **Public Repo:** https://github.com/exelentshakil/claude-dev-cockpit  
 

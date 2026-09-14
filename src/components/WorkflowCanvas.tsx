@@ -74,13 +74,13 @@ export function WorkflowCanvas() {
     },
     {
       id: 5,
-      label: "Follow-Up Questionnaire",
-      sublabel: "Comprehensive DX feedback & completion sign-off",
+      label: "Technical Evaluation",
+      sublabel: "Comprehensive DX analysis & architecture sign-off",
       tag: "Day 7 (2.0h)",
       icon: FileCheck,
       status: "completed",
       duration: "120m",
-      telemetry: "Feedback Dispatched • $700 Milestone Finalized",
+      telemetry: "Evaluation Dispatched • Architecture Validated",
     },
   ];
 

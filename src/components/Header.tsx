@@ -2,17 +2,14 @@
 
 import React from "react";
 import {
-  Cpu,
+  Sparkles,
   Layers,
-  Terminal,
-  ShieldCheck,
+  Cpu,
+  Activity,
   Calendar,
   FileQuestion,
   Calculator,
   Download,
-  Activity,
-  CheckCircle2,
-  Sparkles,
 } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -28,7 +25,7 @@ export function Header({ activeTab, setActiveTab, onOpenTestLab }: HeaderProps) 
     { id: "lab", label: "Live Lab Simulator", icon: Cpu, isLive: true },
     { id: "pipeline", label: "Workflow Pipeline", icon: Activity },
     { id: "study-plan", label: "7-Day Study Plan", icon: Calendar },
-    { id: "questionnaire", label: "Post-Cert Questionnaire", icon: FileQuestion },
+    { id: "questionnaire", label: "Technical Evaluation", icon: FileQuestion },
     { id: "roi", label: "Prompt Caching ROI", icon: Calculator },
     { id: "blueprints", label: "Export Blueprints", icon: Download },
   ];
@@ -53,7 +50,7 @@ export function Header({ activeTab, setActiveTab, onOpenTestLab }: HeaderProps) 
                 </span>
               </div>
               <p className="text-xs text-[var(--color-text-muted)] font-mono">
-                Candidate: Shakil Ahmed • 7-Day Target SLA • Ref #BS-2026-CLAUDE-001
+                Principal Architect: Shakil Ahmed • Enterprise Messages API v1 • Ref #BS-2026-CLAUDE-001
               </p>
             </div>
           </div>
@@ -66,22 +63,21 @@ export function Header({ activeTab, setActiveTab, onOpenTestLab }: HeaderProps) 
               <span className="text-emerald-600 dark:text-emerald-400">Readiness:</span> 96.4%
             </div>
             <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-mono font-semibold bg-[var(--color-panel-subtle)] border border-[var(--color-border)] text-[var(--color-text-secondary)] whitespace-nowrap shrink-0">
-              <span className="text-violet-600 dark:text-violet-400">Budget:</span> $700.00 Fixed
+              <span className="text-violet-600 dark:text-violet-400">Architecture:</span> Messages API v1
             </div>
             <button
               onClick={onOpenTestLab}
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-hover)] text-white transition-colors whitespace-nowrap shrink-0 shadow-sm cursor-pointer"
             >
               <Sparkles className="w-3.5 h-3.5" />
-              Test Live AI Lab
+              <span>Test Live AI Lab</span>
             </button>
-            {/* Prominent Theme Toggle */}
             <ThemeToggle />
           </div>
         </div>
 
         {/* Navigation Tabs */}
-        <nav className="flex items-center gap-1 pt-3 overflow-x-auto no-scrollbar">
+        <nav className="flex items-center gap-1 overflow-x-auto pt-3 no-scrollbar">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
@@ -89,18 +85,16 @@ export function Header({ activeTab, setActiveTab, onOpenTestLab }: HeaderProps) 
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-semibold whitespace-nowrap shrink-0 transition-all cursor-pointer ${
+                className={`inline-flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold transition-all whitespace-nowrap cursor-pointer ${
                   isActive
-                    ? "bg-[var(--color-brand-subtle)] text-[var(--color-brand-primary)] border border-[var(--color-brand-primary)]/30 font-bold"
-                    : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-panel-subtle)] border border-transparent"
+                    ? "bg-[var(--color-brand-primary)] text-white shadow-sm"
+                    : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-panel-subtle)]"
                 }`}
               >
                 <Icon className="w-3.5 h-3.5" />
                 <span>{tab.label}</span>
                 {tab.isLive && (
-                  <span className="px-1.5 py-0.2 rounded text-[12px] font-mono font-bold bg-emerald-500 text-white leading-tight">
-                    LIVE
-                  </span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                 )}
               </button>
             );

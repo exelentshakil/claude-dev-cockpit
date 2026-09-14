@@ -74,20 +74,20 @@ export function QuestionnairePreview() {
         <div>
           <div className="flex items-center gap-2">
             <h2 className="text-sm font-bold uppercase tracking-wider text-[var(--color-text-primary)]">
-              Post-Certification Comprehensive Follow-Up Questionnaire
+              Technical Architecture & Developer Experience Evaluation
             </h2>
             <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-violet-500/10 text-violet-500 border border-violet-500/20 whitespace-nowrap shrink-0">
-              Milestone 2 Deliverable
+              Architecture Audit Module
             </span>
           </div>
           <p className="text-xs text-[var(--color-text-muted)] mt-1">
-            Simulating the in-depth post-exam questionnaire delivering actionable developer experience (DX) insights to the client.
+            Developer experience (DX) and architecture evaluation workbench collecting actionable diagnostic insights across Anthropic Messages API v1, Prompt Caching, and CLI tooling.
           </p>
         </div>
 
         <div className="flex items-center gap-2">
           <span className="text-xs font-mono text-[var(--color-text-muted)]">
-            Required Milestone: <strong className="text-emerald-500">$350 Release Gate</strong>
+            Evaluation Standard: <strong className="text-emerald-500">Anthropic Production Readiness</strong>
           </span>
         </div>
       </div>

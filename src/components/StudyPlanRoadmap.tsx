@@ -115,13 +115,13 @@ export function StudyPlanRoadmap() {
     {
       day: 7,
       dateLabel: "Day 7 (Final)",
-      title: "Comprehensive Questionnaire & Project Sign-Off",
+      title: "Architecture Evaluation & System Validation",
       hours: 2.0,
-      objective: "Complete in-depth follow-up questionnaire providing actionable evaluation data on Claude developer experience.",
+      objective: "Complete in-depth architectural evaluation providing actionable telemetry and developer experience insights.",
       deliverables: [
         "Detailed feedback on API ergonomics, caching, and documentation",
         "Developer experience analysis across Claude Code CLI and SDK",
-        "Final project milestone submission for $700 escrow release"
+        "Production system validation and developer experience report"
       ],
       status: "scheduled",
       icon: FileText,
@@ -212,9 +212,9 @@ export function StudyPlanRoadmap() {
             <Award className="w-4 h-4" />
           </div>
           <div>
-            <div className="text-xs font-mono text-[var(--color-text-muted)]">Escrow Milestones</div>
+            <div className="text-xs font-mono text-[var(--color-text-muted)]">Curriculum Coverage</div>
             <div className="text-base font-bold font-mono text-[var(--color-text-primary)]">
-              $350 Upfront / $350 Final
+              5 Core Domains (100%)
             </div>
           </div>
         </div>
